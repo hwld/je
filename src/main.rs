@@ -1,12 +1,12 @@
 mod client;
 mod dotenv;
 
-use std::{env, error::Error};
+use std::env;
 
 use client::Client;
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<(), anyhow::Error> {
     let args = env::args().collect::<Vec<String>>();
     let input = args.get(1).unwrap();
 
